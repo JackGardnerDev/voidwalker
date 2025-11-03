@@ -66,3 +66,26 @@ Expect incomplete features, placeholder assets, and rapid iteration.
 
 This project is open-source and available under the **MIT License**.
 Feel free to mod.
+
+## Missing Assets
+
+The assets/ and images/ folders are not included in this repository because they contain large files (such as models, textures, and sounds) that significantly increase the repo size.
+
+Without these files there will be errors loading the game.
+These files are required for local development and testing.
+Excluding them helps keep the repository lightweight and fast to clone.
+If you’re setting up the project locally, you’ll need to create these folders and include your own or placeholder content.
+The file structure for these folders is as follows:
+
+images/
+ ├─ background/
+ ├─ border-icons/
+ ├─ planets/
+ ├─ rank-icons/
+ ├─ voidwalker-icons/
+ └─ favicon.png
+
+assets/
+ ├─ models/
+ ├─ sounds/
+ └─ textures/
