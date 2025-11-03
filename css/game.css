@@ -1,0 +1,217 @@
+/* 
+
+Voidwalker Main Game UI Stylesheet: 
+Handles visual presentation for in-game HUD, loading screens, error display, FPS counter, and UI buttons.
+
+*/
+
+/* Global Styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--background-color, #100c08);
+}
+
+/* Ensure WebGL canvas fills the window without spacing */
+canvas {
+    display: block;
+}
+
+/* Crosshair */
+#crosshair {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Use ::before and ::after to draw the cross lines */
+#crosshair::before,
+#crosshair::after {
+    content: '';
+    position: absolute;
+    background: var(--secondary-color, #e5e4e2);
+    /* box-shadow: 0 0 8px var(--secondary-color, #e5e4e2); */
+}
+
+/* Vertical line */
+#crosshair::before {
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+/* Horizontal line */
+#crosshair::after {
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+/* Loading Indicator */
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color, #00ffff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    z-index: 1000;
+    text-shadow: var(--glow, 0 0 5px #00ffff, 0 0 15px #00ffff);
+}
+
+/* Error Message */
+#error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--mars, #be0032);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid var(--mars, #be0032);
+    border-radius: 12px;
+    display: none;
+    z-index: 1000;
+    max-width: 80%;
+    box-shadow: 0 0 20px rgba(190, 0, 50, 0.5);
+}
+
+/* Updated UI - Now centered as a popup menu */
+#ui {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color, #00ffff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    z-index: 200;
+    border: 2px solid var(--primary-color, #00ffff);
+    box-shadow: 0 0 20px var(--primary-color, #00ffff), 0 8px 32px rgba(0, 0, 0, 0.6);
+    min-width: 300px;
+    text-align: center;
+}
+
+#ui strong {
+    font-size: 24px;
+    color: var(--primary-color, #00ffff);
+    display: block;
+    margin-bottom: 20px;
+    text-shadow: var(--glow, 0 0 5px #00ffff, 0 0 15px #00ffff);
+}
+
+#ui div {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: var(--secondary-color, #e5e4e2);
+}
+
+/* FPS Counter */
+#fps {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: var(--primary-color, #00ffff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-color, #00ffff);
+    z-index: 50;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Back button container */
+#back-btn {
+    position: fixed;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 40px;
+    background: transparent;
+    border: 2px solid var(--primary-color, #00ffff);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 201;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: var(--glow, 0 0 5px #00ffff, 0 0 15px #00ffff);
+    box-shadow: 0 0 10px var(--primary-color, #00ffff);
+    text-decoration: none;
+}
+
+#back-btn a {
+    text-decoration: none;
+    color: var(--primary-color, #00ffff); 
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    text-shadow: inherit;
+    display: block;
+    line-height: 1;
+    transition: text-shadow 0.3s ease;
+}
+
+#back-btn:hover a {
+    text-shadow: var(--glow-bright, 0 0 40px #00ffff, 0 0 120px #00ffff);
+}
+
+#back-btn:hover {
+    box-shadow: 0 0 40px var(--primary-color, #00ffff);
+}
+
+#back-btn a:link,
+#back-btn a:visited,
+#back-btn a:active {
+    color: var(--primary-color, #00ffff);
+    text-decoration: none;
+}
+
+/* Hint text for opening menu */
+#menu-hint {
+    position: fixed;
+    top: 10px;
+    left: 5%;
+    transform: translateX(-50%);
+    color: var(--primary-color, #00ffff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.5;
+    text-shadow: 0 0 5px var(--primary-color, #00ffff);
+    /* animation: fadeInOut 3s ease-in-out infinite; */
+}
+
+/* @keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+} */

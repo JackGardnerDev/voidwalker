@@ -1,0 +1,281 @@
+/* Stylesheet: Main Page */
+
+/* Body */
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--primary-color);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    /* Main */
+    --primary-color: #00ffff;
+    --secondary-color: #e5e4e2;
+    --background-color: #100c08;
+    /* Secondary */
+    --mars: #be0032;
+    /* Glows */
+    --glow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color);
+    --glow-secondary: 0 0 5px var(--secondary-color), 0 0 15px var(--secondary-color);
+    --glow-bright: 0 0 40px var(--primary-color), 0 0 120px var(--primary-color);
+    --glow-shadow: drop-shadow(-30 30 40px var(--primary-color)) drop-shadow(-30 30 40px var(--primary-color));
+    --glow-bright-shadow: drop-shadow(0 0 40px var(--primary-color)) drop-shadow(0 0 120px var(--primary-color));
+    --glow-shadow-mars: drop-shadow(-5px 0 10px var(--mars));
+    --glow-shadow-ship: drop-shadow(-8px 10px 12px var(--primary-color)) drop-shadow(-12px 14px 24px var(--primary-color));
+    /* Voidwalkers */
+    /* --cane: #00b7eb;
+    --carpe: #b90202;
+    --danteh: #09ff00;
+    --exo: #f045d3;
+    --d-11: #ff8c00;
+    --im-94: #504e4e;
+    --janus: #e44a61;
+    --lancer: #0000cd;
+    --mae: #a71fa7;
+    --moka: #0fa30f;
+    --nyx: #ffcc00;
+    --raze: #bfc2c4;
+    --qin: #660033;
+    --vex: #924c3e; */
+    --cane: #00b7eb;
+    --carpe: #b90202;
+    --d-11: #FF9900;
+    --danteh: #7030A0;
+    --exo: #66FF66;
+    --im-94: #504e4e;
+    --janus: #FF3300;
+    --lancer: #0000cd;
+    --mae: #FF3399;
+    --moka: #00B050;
+    --nyx: #FFFF00;
+    --qin: #660033;
+    --raze: #CC00FF;
+    --vex: #FFCC00;
+}
+
+/* Title - Top Left */
+
+.top-left-title {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+    transition: text-shadow 0.3s ease;
+}
+
+.top-left-title:hover {
+    text-shadow: var(--glow-bright);
+}
+
+/* Navigation */
+
+.nav-menu {
+    position: absolute;
+    top: 50%;
+    left: 3rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+}
+
+.nav-menu a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: var(--glow);
+    transition: transform 0.2s ease;
+    transform-origin: left;
+}
+
+.nav-menu a:hover {
+    transform: scale(1.35);
+    text-shadow: var(--glow-bright);
+}
+
+/* Profile - Top Right */
+
+.top-right-wrapper {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    text-align: right;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 1;
+}
+
+.top-right-panel {
+    font-size: 2.5rem;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+    text-decoration: none;      
+    cursor: pointer;            
+    transform-origin: right;
+}
+
+.top-right-panel:hover {
+    text-shadow: var(--glow-bright);
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.rank-icon img, .border-icon img {
+    width: 35px;
+    height: 35px;
+    /* height: 1.5em;  */
+    vertical-align: middle;
+    border-radius: 50%;
+    /* border: 2px solid var(--primary-color); */
+}
+
+.top-right-panel:hover .profile-icon {
+    filter: var(--glow-bright-shadow);
+}
+
+.credits-elo-rank {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+/* Customise Button */
+
+.bottom-left-link {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: var(--glow);
+    transition: text-shadow 0.3s ease;
+}
+
+.bottom-left-link:hover {
+    text-shadow: var(--glow-bright);
+}
+
+/* Back Button */
+
+.bottom-right-link {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: var(--glow);
+    transition: text-shadow 0.3s ease;
+}
+
+.bottom-right-link:hover {
+    text-shadow: var(--glow-bright);
+}
+
+/* Moving Background */
+
+.mars-main {
+    position: absolute;
+    top: 50%;
+    left: -200px;
+    width: 50px;
+    height: 50px;
+    animation: moveMars 120s linear infinite;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -user-drag: none;
+    filter: var(--glow-shadow-mars);
+    z-index: 0;
+}
+
+.starship {
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 200px;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -user-drag: none;
+    filter: var(--glow-shadow-ship);
+    animation: moveStarship 120s linear infinite, pulse-glow-ship 2.5s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes moveMars {
+    0% {
+        left: -200px;
+        top: 50%;
+    }
+    100% {
+        left: 110%;
+        top: -10%;
+    }
+}
+
+@keyframes moveStarship {
+    0% {
+        left: -200px;
+        bottom: -200px;
+        transform: scale(1.5);
+    }
+    100% {
+        left: 105%;
+        bottom: 105%;
+        transform: scale(0.1);
+    }
+}
+
+#star-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #100c08;
+}
+
+/* Global Utilities */
+
+.hidden {
+    display: none !important;
+}
+
+.page-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

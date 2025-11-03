@@ -1,0 +1,71 @@
+/* Loading Page */
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it's definitely above the canvas */
+    pointer-events: none; /* Allow canvas to receive pointer events if needed */
+}
+
+.title {
+    font-size: 3.5rem;
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff;
+    margin-bottom: 12.5rem;
+}
+
+.loading-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 17.5rem;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border-top: 3px solid #00ffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

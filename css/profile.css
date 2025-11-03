@@ -1,0 +1,128 @@
+/* Box */
+
+.info-box-container {
+    position: absolute;
+    top: 12.5rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.info-box {
+    flex: 1;
+    max-height: 600px;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    overflow-y: auto;
+    color: var(--primary-color);
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgba(0, 0, 0, 0.3);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+/* Scrollbar */
+
+.info-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-box::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Box Content */
+
+.box-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+}
+
+.box-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+}
+
+.box-sub-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+}
+
+.bar-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bar-label {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.bar-fill-container {
+    flex: 3;
+    margin-left: 1rem;
+    background-color: #222;
+    border-radius: 4px;
+    height: 1.4rem;
+    overflow: hidden;
+}
+
+.bar-fill {
+    position: relative;
+    height: 100%;
+    border-radius: 4px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.5rem;
+    color: var(--background-color);
+    font-size: 0.85rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bar-text {
+    z-index: 1;
+}
+
+.bar-fill.red {
+    background-color: #ff4c4c;
+}
+
+.bar-fill.blue {
+    background-color: #4cb2ff;
+}
+
+.bar-fill.green {
+    background-color: #4cff89;
+}
+
+/* Credits/Elo/Rank */
+
+.box-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.box-value {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-family: 'Orbitron', sans-serif;
+    text-align: right;
+    margin-top: -10px;
+}

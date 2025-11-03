@@ -1,0 +1,165 @@
+/* Box */
+
+.info-box-container {
+    position: absolute;
+    top: 12.25rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.info-box {
+    flex: 1;
+    max-height: 600px;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    overflow-y: auto;
+    color: var(--primary-color);
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgba(0, 0, 0, 0.3);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+/* Scrollbar */
+
+.info-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-box::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Box Content */
+
+.box-title {
+    font-size: 1.75rem;
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow);
+}
+
+.bar-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.bar-fill-container {
+    flex: 3;
+    width: 100%;
+    background-color: #222;
+    border-radius: 4px;
+    height: 1.5rem;
+    overflow: hidden;
+}
+
+.bar-fill {
+    position: relative;
+    height: 100%;
+    border-radius: 4px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+    font-size: 0.85rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bar-text {
+    z-index: 1;
+}
+
+.bar-fill.red {
+    background-color: #ff4c4c;
+}
+
+.bar-fill.blue {
+    background-color: #4cb2ff;
+}
+
+.bar-fill.green {
+    background-color: #4cff89;
+}
+
+/* Add / Avoid Button */
+
+.add-avoid {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  text-shadow: var(--glow);
+  transition: text-shadow 0.3s ease;
+}
+
+.add-avoid:hover {
+  text-shadow: var(--glow-bright);
+}
+
+/* Add Friend pop-up */
+
+.friend-input-wrapper {
+  display: none;
+  /* margin-top: 1rem;
+  text-align: center; */
+  position: absolute;
+  bottom: 2rem;
+  left: 12rem;
+}
+
+.friend-input {
+  padding: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+  border: 1px solid var(--primary-color);
+  background-color: #111;
+  color: var(--primary-color);
+  border-radius: 6px;
+}
+
+.friend-submit-button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Orbitron', sans-serif;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.friend-submit-button:hover {
+  background-color: var(--primary-color);
+  color: #000;
+  box-shadow: var(--glow-bright);
+}
+
+.remove-friend {
+  margin-left: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--mars);
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.remove-friend:hover {
+  /* color: red; */
+  box-shadow: var(--glow-shadow-mars);
+}

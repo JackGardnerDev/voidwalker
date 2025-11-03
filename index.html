@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Voidwalker Game Concept">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Jack Gardner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voidwalker</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+    <!-- External -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/customise.css">
+    <link rel="stylesheet" href="css/load-game.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/options.css">
+    <link rel="stylesheet" href="css/play.css">
+    <link rel="stylesheet" href="css/players.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/ranks.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/voidwalkers.css">
+    <!-- JS -->
+    <script src="js/add-friend.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/background-music.js" defer></script>
+    <script src="js/credits-elo-rank.js" defer></script>
+    <script src="js/customise-profile.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/player-profile.js" defer></script>
+    <script src="js/voidwalkers.js" defer></script>
+    <!-- Game JS -->
+    <script src="js/game/index.js" defer></script>
+</head>
+<body>
+
+<!-- ========== INDEX / LOADING PAGE ========== -->
+<div id="page-index" class="page-container">
+    <div class="loading-overlay">
+        <div class="title">Voidwalker</div>
+        <div class="subtitle"><span class="loading-text">Loading<span id="dots">...</span></span></div>
+        <div class="center-wrapper"><button class="loading-button" disabled><div class="spinner"></div></button></div>
+    </div>
+</div>
+
+<!-- ========== MAIN PAGE ========== -->
+<div id="page-main" class="page-container hidden">
+    <a href="#" onclick="showPage('story')" class="top-left-title-link"><div class="top-left-title">Voidwalker</div></a>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="nav-menu">
+        <a href="#" onclick="showPage('play')">Play</a>
+        <a href="#" onclick="showPage('voidwalkers')">Voidwalkers</a>
+        <a href="#" onclick="showPage('players')">Players</a>
+        <a href="#" onclick="showPage('profile')">Profile</a>
+        <a href="#" onclick="showPage('options')">Options</a>
+        <a href="#" onclick="location.reload(); return false;">Exit</a>
+    </div>
+    <img src="imgs/background/mars.png" class="mars-main" alt="Mars" draggable="false">
+    <img src="imgs/background/starship.png" class="starship" alt="Starship" draggable="false">
+</div>
+
+<!-- ========== PLAY PAGE ========== -->
+<div id="page-play" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Play</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="play-button-container">
+        <button class="play-button">Casual</button>
+        <button class="play-button">Competitive</button>
+        <!-- <button class="play-button">Campaign</button> -->
+        <a href="#" class="play-button" onclick="showPage('game')">Campaign</a>
+        <button class="play-button">Practice</button>
+    </div>
+    <a href="#" onclick="showPage('ranks')" class="bottom-left-link">Ranks</a>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+    <div class="solar-system">
+        <div class="sun"><img src="imgs/planets/sun-clear.png" class="planet sun-img" alt="Sun"></div>
+        <div class="orbit mercury"><img src="imgs/planets/mercury-clear.png" class="planet mercury-img" alt="Mercury"></div>
+        <div class="orbit venus"><img src="imgs/planets/venus-clear.png" class="planet venus-img" alt="Venus"></div>
+        <div class="orbit earth"><img src="imgs/planets/earth-clear.png" class="planet earth-img" alt="Earth"></div>
+        <div class="orbit mars"><img src="imgs/planets/mars-clear.png" class="planet mars-img" alt="Mars"></div>
+        <div class="orbit jupiter"><img src="imgs/planets/jupiter-clear.png" class="planet jupiter-img" alt="Jupiter"></div>
+        <div class="orbit saturn"><img src="imgs/planets/saturn-clear.png" class="planet saturn-img" alt="Saturn"></div>
+        <div class="orbit uranus"><img src="imgs/planets/uranus-clear.png" class="planet uranus-img" alt="Uranus"></div>
+        <div class="orbit neptune"><img src="imgs/planets/neptune-clear.png" class="planet neptune-img" alt="Neptune"></div>
+    </div>
+</div>
+
+<!-- ========== VOIDWALKERS PAGE ========== -->
+<div id="page-voidwalkers" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Voidwalkers</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="voidwalker-layout">
+        <div class="section section-left">
+            <div class="section-title">Tank</div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/danteh.png" alt="Danteh"><span>Danteh</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/exo.png" alt="Exo"><span>Exo</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/janus.png" alt="Janus"><span>Janus</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/lancer.png" alt="Lancer"><span>Lancer</span></div>
+        </div>
+        <div class="section section-center">
+            <div class="section-title">Damage</div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/cane.png" alt="Cane"><span>Cane</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/carpe.png" alt="Carpe"><span>Carpe</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/im-94.png" alt="IM-94"><span>IM-94</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/mae.png" alt="Mae"><span>Mae</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/nyx.png" alt="Nyx"><span>Nyx</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/qin.png" alt="Qin"><span>Qin</span></div>
+        </div>
+        <div class="section section-right">
+            <div class="section-title">Support</div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/d-11.png" alt="D-11"><span>D-11</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/moka.png" alt="Moka"><span>Moka</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/raze.png" alt="Raze"><span>Raze</span></div>
+            <div class="grid-item"><img src="imgs/voidwalker-icons/vex.png" alt="Vex"><span>Vex</span></div>
+        </div>
+    </div>
+    <div id="character-popup" class="character-popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="Character Image">
+            <h2 id="popup-title">Title</h2>
+            <h4 id="popup-subtitle">Subtitle</h4>
+            <p id="popup-description">Description here</p>
+        </div>
+    </div>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== PLAYERS PAGE ========== -->
+<div id="page-players" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Players</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="info-box-container">
+        <div class="info-box">
+            <div class="box-title">Friends</div>
+        </div>
+        <div class="info-box">
+            <div class="box-title">Recent Players</div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill blue" style="width: 100%;"><span class="bar-text">Bob</span></div></div></div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill blue" style="width: 100%;"><span class="bar-text">Billy</span></div></div></div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill blue" style="width: 100%;"><span class="bar-text">Willy</span></div></div></div>
+        </div>
+        <div class="info-box">
+            <div class="box-title">Avoided Players</div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Evil Bob</span></div></div></div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Evil Billy</span></div></div></div>
+            <div class="bar-entry"><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Evil Willy</span></div></div></div>
+        </div>
+    </div>
+    <div class="add-avoid" id="add-friend">Add Friend</div>
+    <div id="friend-input-wrapper" class="friend-input-wrapper">
+        <input type="text" id="friend-name" placeholder="Enter friend name" class="friend-input">
+        <button id="submit-friend" class="friend-submit-button">Add</button>
+    </div>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== PROFILE PAGE ========== -->
+<div id="page-profile" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Profile</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="info-box-container">
+        <div class="info-box">
+            <div class="box-title">Player Stats</div>
+            <div class="box-subtitle">Player Hours</div>
+            <div class="box-sub-subtitle">Playtime</div>
+            <div class="bar-entry"><span class="bar-label">Total</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">100% - 12 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Casual</span><div class="bar-fill-container"><div class="bar-fill blue" style="width: 40%;"><span class="bar-text">40% - 5 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Competitive</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 60%;"><span class="bar-text">60% - 7 Hours</span></div></div></div>
+            <div class="box-sub-subtitle">Role Hours</div>
+            <div class="bar-entry"><span class="bar-label">Tank</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 50%;"><span class="bar-text">50% - 6 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Damage</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 25%;"><span class="bar-text">25% - 3 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Support</span><div class="bar-fill-container"><div class="bar-fill blue" style="width: 25%;"><span class="bar-text">25% - 3 Hours</span></div></div></div>
+            <div class="box-row"><div class="box-subtitle">Credits</div><div class="box-value" id="credits"></div></div>
+            <div class="box-row"><div class="box-subtitle">Elo</div><div class="box-value" id="elo"></div></div>
+            <div class="box-row"><div class="box-subtitle">Rank</div><div class="box-value" id="rank"></div></div>
+            <div class="box-row"><div class="box-subtitle">Border</div><div class="box-value" id="border"></div></div>
+        </div>
+        <div class="info-box">
+            <div class="box-title">Voidwalkers Playtime</div>
+            <div class="bar-entry"><span class="bar-label">Exo</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--exo);"><span class="bar-text">6 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Cane</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--cane);"><span class="bar-text">3 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">D-11</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--d-11);"><span class="bar-text">4 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Danteh</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--danteh);"><span class="bar-text">2 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Raze</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--raze);"><span class="bar-text">7 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">IM-94</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--im-94);"><span class="bar-text">5 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Janus</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--janus);"><span class="bar-text">4 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Lancer</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--lancer);"><span class="bar-text">5 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Mae</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--mae);"><span class="bar-text">6 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Moka</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--moka);"><span class="bar-text">6 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Nyx</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--nyx);"><span class="bar-text">2 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Qin</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--qin);"><span class="bar-text">1 Hour</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Vex</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--vex);"><span class="bar-text">3 Hours</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">Carpe</span><div class="bar-fill-container"><div class="bar-fill" style="width: 100%; background-color: var(--carpe);"><span class="bar-text">8 Hours</span></div></div></div>
+        </div>
+        <div class="info-box">
+            <div class="box-title">Game History</div>
+            <div class="bar-entry"><span class="bar-label">Last Game</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">2nd Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">3rd Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">4th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">5th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">6th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">7th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">8th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">9th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">10th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">11th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">12th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">13th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">14th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">15th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">16th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">17th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">18th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">19th Last</span><div class="bar-fill-container"><div class="bar-fill green" style="width: 100%;"><span class="bar-text">Win</span></div></div></div>
+            <div class="bar-entry"><span class="bar-label">20th Last</span><div class="bar-fill-container"><div class="bar-fill red" style="width: 100%;"><span class="bar-text">Loss</span></div></div></div>
+        </div>
+    </div>
+    <a href="#" onclick="showPage('customise')" class="bottom-left-link"><i class="fas fa-cog"></i> Customise</a>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== CUSTOMISE PAGE ========== -->
+<div id="page-customise" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Customise Profile</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="customise-form">
+        <form id="customiseForm">
+            <label for="nameInput">Username:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <label id="profilePicture">Choose Profile Picture:</label>
+            <div class="image-options">
+                <img src="imgs/voidwalker-icons/danteh.png" class="selectable-img" data-img="imgs/voidwalker-icons/danteh.png" alt="Danteh">
+                <img src="imgs/voidwalker-icons/exo.png" class="selectable-img" data-img="imgs/voidwalker-icons/exo.png" alt="Exo">
+                <img src="imgs/voidwalker-icons/janus.png" class="selectable-img" data-img="imgs/voidwalker-icons/janus.png" alt="Janus">
+                <img src="imgs/voidwalker-icons/lancer.png" class="selectable-img" data-img="imgs/voidwalker-icons/lancer.png" alt="Lancer">
+                <img src="imgs/voidwalker-icons/cane.png" class="selectable-img" data-img="imgs/voidwalker-icons/cane.png" alt="Cane">
+                <img src="imgs/voidwalker-icons/carpe.png" class="selectable-img" data-img="imgs/voidwalker-icons/carpe.png" alt="Carpe">
+                <img src="imgs/voidwalker-icons/im-94.png" class="selectable-img" data-img="imgs/voidwalker-icons/im-94.png" alt="IM-94">
+                <img src="imgs/voidwalker-icons/mae.png" class="selectable-img" data-img="imgs/voidwalker-icons/mae.png" alt="Mae">
+                <img src="imgs/voidwalker-icons/nyx.png" class="selectable-img" data-img="imgs/voidwalker-icons/nyx.png" alt="Nyx">
+                <img src="imgs/voidwalker-icons/qin.png" class="selectable-img" data-img="imgs/voidwalker-icons/qin.png" alt="Qin">
+                <img src="imgs/voidwalker-icons/d-11.png" class="selectable-img" data-img="imgs/voidwalker-icons/d-11.png" alt="D-11">
+                <img src="imgs/voidwalker-icons/moka.png" class="selectable-img" data-img="imgs/voidwalker-icons/moka.png" alt="Moka">
+                <img src="imgs/voidwalker-icons/raze.png" class="selectable-img" data-img="imgs/voidwalker-icons/raze.png" alt="Raze">
+                <img src="imgs/voidwalker-icons/vex.png" class="selectable-img" data-img="imgs/voidwalker-icons/vex.png" alt="Vex">
+            </div>
+            <img id="profilePreview" src="imgs/favicon.png" alt="Preview" class="profile-icon">
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <a href="#" onclick="showPage('profile')" class="bottom-right-link">Back / Cancel</a>
+</div>
+
+<!-- ========== OPTIONS PAGE ========== -->
+<div id="page-options" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Options</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="sound-form">
+        <form id="soundForm">
+            <label for="soundInput">Sound:</label>
+            <input type="range" id="soundInput" min="0" max="100"><div id="soundLevel"></div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== RANKS PAGE ========== -->
+<div id="page-ranks" class="page-container hidden">
+    <div class="top-left-title">Voidwalker - Ranks</div>
+    <div class="top-right-wrapper">
+        <a href="#" onclick="showPage('profile')" class="top-right-panel"><span class="username" id="playerName"></span>
+        <img src="imgs/favicon.png" alt="Profile" class="profile-icon" id="profilePicture"></a>
+        <div class="credits-elo-rank"><div id="credits"></div><div id="elo"></div></div>
+    </div>
+    <div class="rank-bar-container">
+        <div class="rank-labels">
+            <div class="rank-label"><img src="imgs/rank-icons/1-striker.png" alt="Striker"><span>Striker</span></div>
+            <div class="rank-label"><img src="imgs/rank-icons/2-spectre.png" alt="Spectre"><span>Spectre</span></div>
+            <div class="rank-label"><img src="imgs/rank-icons/3-vanguard.png" alt="Vanguard"><span>Vanguard</span></div>
+            <div class="rank-label"><img src="imgs/rank-icons/4-starkiller.png" alt="Starkiller"><span>Starkiller</span></div>
+            <div class="rank-label"><img src="imgs/rank-icons/5-voidwalker.png" alt="Voidwalker"><span>Voidwalker</span></div>
+        </div>
+        <div class="rank-bar">
+            <div class="segment striker"></div>
+            <div class="segment spectre"></div>
+            <div class="segment vanguard"></div>
+            <div class="segment starkiller"></div>
+            <div class="segment voidwalker"></div>
+        </div>
+        <div class="elo-markers">
+            <div class="elo" style="left: 0%;">1</div>
+            <div class="elo" style="left: 20%;">1000</div>
+            <div class="elo" style="left: 40%;">2000</div>
+            <div class="elo" style="left: 60%;">3000</div>
+            <div class="elo" style="left: 80%;">4000</div>
+            <div class="elo" style="left: 100%;">5000</div>
+        </div>
+    </div>
+    <a href="#" onclick="showPage('play')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== STORY PAGE ========== -->
+<div id="page-story" class="page-container hidden">
+    <div class="top-left-title">Voidwalker Story</div>
+    <div class="story-text">
+        <div class="crawl">
+            <h1>Chapter I — Rise of the Immortal Empire</h1>
+            <p>It is a time of renewed darkness. Long ago, humanity fled a shattered Earth, settling Mars as the last survivors of a planet consumed by war. Thus began the Discovery Era — a 6,000-year age of exploration that unlocked the secrets of the Solar System.</p>
+            <p>From the ashes of that era rose the Genesis Period, marked by the rise of the Royal Empire. Empowered by the rare element Vigorium found on Neptune, the empire ruled for nearly seven centuries before collapsing under the weight of civil war and corruption.</p>     
+            <p>The Attrition Period followed, a dark age of fractured power. From the chaos, the United Republic emerged — a beacon of democracy that brought peace to the system for 3,497 years.</p> 
+            <p>But peace bred complacency. The Republic's armies were dismantled, its weapons scrapped. Few knew the last royal bloodline had survived. Prince Junius, heir to the forgotten throne, had vanished into the far reaches of the system — waiting, rebuilding, rising.</p> 
+            <p>Now, after three and a half thousand years, they've returned.</p> 
+            <p>In a single, devastating strike, the Immortal Empire destroyed the Republic Senate on Mars, killing its leaders and capturing President Aurelius. The Republic, weak and fractured, must now rally or fall.</p> 
+            <p>The age of peace is over. The Belligerent Period has begun...</p> 
+        </div>
+    </div>
+    <a href="#" onclick="showPage('main')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- ========== LOAD GAME PAGE ========== -->
+<div id="page-game" class="page-container hidden">
+    <div class="container-load-game">
+        <h1>Voidwalker</h1>
+        <!-- Heroes -->
+        <div class="selection-group">
+            <label for="hero">Select Your Voidwalker:</label>
+            <select id="hero">
+                <!-- Hero Options -->
+                <optgroup label="Vanguard">
+                    <option value="Danteh">Danteh</option>
+                    <option value="Exo">Exo</option>
+                    <option value="Janus">Janus</option>
+                    <option value="Lancer">Lancer</option>
+                </optgroup>
+                <optgroup label="Striker">
+                    <option value="Cane">Cane</option>
+                    <option value="Carpe">Carpe</option>
+                    <option value="IM-94">IM-94</option>
+                    <option value="Mae">Mae</option>
+                    <option value="Nyx">Nyx</option>
+                    <option value="Qin">Qin</option>
+                </optgroup>
+                <optgroup label="Medic">
+                    <option value="D-11">D-11</option>
+                    <option value="Moka">Moka</option>
+                    <option value="Raze">Raze</option>
+                    <option value="Vex">Vex</option>
+                </optgroup>
+            </select>
+        </div>
+        <!-- Maps -->
+        <div class="selection-group">
+            <label for="map">Select Your Destination:</label>
+            <select id="map">
+                <!-- Map Options -->
+                <optgroup label="Training">
+                    <option value="Training-Camp">Training Camp - Pluto</option>
+                </optgroup>
+                <optgroup label="PVP">
+                    <option value="Frontline">Frontline - Mars</option>
+                    <option value="Immortal-Ship">Immortal Ship - Neptune Atmosphere</option>
+                    <option value="Mining-Colony">Mining Colony - Uranus</option>
+                    <option value="New-Republic-Capital">New United Republic Capital - Venus</option>
+                    <option value="Temple">Temple - Mercury</option>
+                    <option value="Outpost">Outpost - Ceres</option>
+                </optgroup>
+            </select>
+        </div>
+        <!-- Load Game -->
+        <button id="start">Start Game</button>
+    </div>
+    <a href="#" onclick="showPage('play')" class="bottom-right-link">Back</a>
+</div>
+
+<!-- Images / Background (shared across all pages) -->
+<canvas id="star-canvas"></canvas>
+<audio id="bg-audio" loop><source src="assets/sounds/background-sound.mp3" type="audio/mpeg"></audio>
+
+</body>
+</html>

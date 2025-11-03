@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Voidwalker Game">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Game">
+    <meta name="author" content="Jack Gardner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title & Favicon -->
+    <title>Voidwalker - Game</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="css/game.css">
+    <script type="module" src="js/game/game-loader.js" defer></script>
+    <script src="js/game/back.js" defer></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Game UI -->
+    <div id="loading">Loading game...</div>
+    <div id="error"></div>
+    <div id="crosshair"></div>
+    <div id="fps" style="display: none;">FPS: 0</div>
+    <!-- Controls -->
+    <div id="ui" style="display: none;">
+        <div><strong>Game Menu</strong></div>
+        <div>W/A/S/D - Move</div>
+        <div>Space - Jump</div>
+        <div>Mouse - Look Around</div>
+        <div>P - Toggle Menu</div>
+    </div>
+    <button id="back-btn" style="display: none;">
+        <a href="#" onclick="goBackToIndex()">Back</a>
+    </button>
+    <!-- Toggle instructions -->
+    <div id="menu-hint">Press P to open/close menu</div>
+</body>
+</html>

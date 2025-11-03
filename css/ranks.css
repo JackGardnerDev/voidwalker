@@ -1,0 +1,74 @@
+.rank-bar-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1000px;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    text-align: center;
+    z-index: 2;
+}
+
+.rank-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.rank-label {
+    flex: 1;
+    text-align: center;
+}
+
+.rank-label img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: -0.85rem;
+    border-radius: 8px;
+}
+
+.rank-bar {
+    display: flex;
+    height: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.segment {
+    flex: 1;
+}
+
+.segment.striker     { background-color: #66ccff; }
+.segment.spectre     { background-color: #66ff99; }
+.segment.vanguard    { background-color: #ffff66; }
+.segment.starkiller  { background-color: #ff9933; }
+.segment.voidwalker  { background-color: #ff5050; }
+
+.elo-markers {
+    position: relative;
+    height: 20px;
+}
+
+.elo-markers .elo {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    text-shadow: var(--glow);
+}
+
+.elo-markers .elo::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 10px;
+    background-color: var(--primary-color);
+}
