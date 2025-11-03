@@ -68,6 +68,7 @@ If you’re setting up the project locally, you’ll need to create these folder
 The file structure for these folders is as follows:
 
 images/ : background/ border-icons/ planets/ rank-icons/ voidwalker-icons/ favicon.png
+
 assets/ : models/ sounds/ textures/
 
 ## Notes
@@ -78,4 +79,4 @@ Expect incomplete features, placeholder assets, and rapid iteration.
 ## License
 
 This project is open-source and available under the **MIT License**.
-Feel free to mod.
+Feel free to mod by adding new maps, heroes, gamemodes, etc.
